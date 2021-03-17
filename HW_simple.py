@@ -12,16 +12,19 @@ def sendKeyboard(idx):
         'chat_id':idx,
         'text':'Button',
         'reply_markup':{
-            'keyboard':[[{'text':'1'}]]
+            'keyboard':[[{'text':'A'},{'text':'B'}],
+            [{'text':'C'},{'text':'D'}]]
         }
+      
         
     }
-    r=requests.post(url,params=payload)
+    r=requests.post(url,json=payload)
     return r.json()
 
     
 ids=1051394478
-sendKeyboard(ids)
+print(sendKeyboard(ids))
+
 
 #1051394478
      
